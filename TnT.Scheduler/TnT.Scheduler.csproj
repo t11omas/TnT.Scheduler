@@ -63,6 +63,7 @@
     <Compile Include="ILoggerFactory.cs" />
     <Compile Include="IScheduler.cs" />
     <Compile Include="IWorker.cs" />
+    <Compile Include="Job.cs" />
     <Compile Include="JobContext.cs" />
     <Compile Include="JobSetup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
