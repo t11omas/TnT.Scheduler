@@ -9,15 +9,14 @@ namespace TnT.Scheduler
         private readonly ILoggerFactory loggerFactory;
         private readonly Dictionary<Guid, IWorker> jobs;
 
-        public Scheduler(): this(new DefaultJobFactory(), new DefaultLoggerFactory())
+        public Scheduler():this(null, null)
         {
-            
         }
 
         public Scheduler(IJobFactory jobFactory, ILoggerFactory loggerFactory)
         {
-            this.loggerFactory = loggerFactory;
-            this.jobFactory = jobFactory;
+            this.loggerFactory = loggerFactory ?? new DefaultLoggerFactory();
+            this.jobFactory = jobFactory ?? new DefaultJobFactory();
             this.jobs = new Dictionary<Guid, IWorker>();
         }
 
